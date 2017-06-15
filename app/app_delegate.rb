@@ -1,10 +1,9 @@
 class AppDelegate
+  attr_accessor :root_view_controller
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    rootViewController = UIViewController.alloc.init
-    rootViewController.title = 'mileage-cloudkit'
-    rootViewController.view.backgroundColor = UIColor.whiteColor
-
-    navigationController = UINavigationController.alloc.initWithRootViewController(rootViewController)
+    @root_view_controller = MileageTableViewController.alloc.init
+    navigationController =
+        UINavigationController.alloc.initWithRootViewController(@root_view_controller)
 
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.rootViewController = navigationController
